@@ -132,11 +132,6 @@ if (is_dir($upload_dir)) {
         </div>
     </div>
 
-    <div class="mt-4 pt-4 mb-6 bg-gray-800 shadow-lg py-8 px-8 rounded-2xl text-white">
-        <h2 class="text-2xl font-semibold mb-3">CHI TIẾT</h2>
-        <p class="leading-relaxed"><?= nl2br($product['content']) ?></p>
-    </div>
-
     <div class="flex items-center gap-4 mb-8" data-aos="fade-up" data-aos-duration="1000">   
         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$url.'" class="relative flex items-center justify-center gap-3 w-52 h-16 rounded-lg bg-blue-600 text-white font-semibold hover:scale-105 transform transition-transform duration-500 overflow-hidden no-underline before:content-[''] before:absolute before:-top-4 before:-right-4 before:w-20 before:h-20 before:bg-[url('assets/img/facebook.png')] before:bg-contain before:bg-no-repeat before:opacity-20 before:rotate-[30deg]">
             <img src="assets/img/facebook.png" alt="Facebook" class="w-6 h-6">
@@ -186,45 +181,6 @@ if (is_dir($upload_dir)) {
         }
         echo '</div>';
     }
-
-    // $stmtOrther = $conn->prepare("SELECT p.id as 'pid', s.* FROM subfolder as s JOIN `post`as p ON p.name = s.post WHERE s.id != ? ORDER BY RAND() LIMIT 8");
-    // $stmtOrther->bind_param("i", $idp);
-    // $stmtOrther->execute();
-    // $resultOrther = $stmtOrther->get_result();
-    // $stmtOrther->close();
-    // if ($resultOrther && $resultOrther->num_rows > 0) { 
-    //     echo '<h1 class="text-3xl tracking-wider text-[#27f2f2] font-bold uppercase text-center mb-10 drop-shadow-[0_0_10px_#27f2f282] " 
-    //     data-aos="fade-up" data-aos-duration="800">
-    //         <div class="inline-block border-b-4 border-[#27f2f2] pb-4">
-    //             SẢN PHẨM KHÁC
-    //         </div>
-    //     </h1>
-    //     <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-duration="1400">';
-    //     while ($productOrther = $resultOrther->fetch_assoc()) {
-    //         $folderOrther = 'assets/upload/'.$productOrther['pid'].'/'.$productOrther['id'].'/';
-    //         if (is_dir($folderOrther)) {
-    //             $filesOrther = scandir($folderOrther);
-    //         } else {
-    //             $filesOrther = [];
-    //         }
-    //         $filesOrther = array_filter($filesOrther, function($fileOrther) use ($folderOrther) {
-    //             return is_file($folderOrther . $fileOrther);
-    //         });
-    //         $firstFileOrther = reset($filesOrther); 
-    //         if($firstFileOrther) {
-    //             $imgFileOrther = '<img src="' . @$folderOrther.@$firstFileOrther . '" alt="' . htmlspecialchars($productAnd['name']) . '" class="w-full h-full object-cover bg-gray-700 rounded-2xl rounded-b-none bg-[url(\'assets/img/background.avif\')] bg-cover bg-center">';
-    //         } else {
-    //             $imgFileOrther = '<span style="height: 180px;" class="w-full object-cover bg-gray-700 rounded-2xl rounded-b-none bg-[url(\'assets/img/background.avif\')] bg-cover bg-center"></span>';
-    //         }
-    //         echo '
-    //             <a href="product.php?idp=' . htmlspecialchars($productOrther['id']) . '" 
-    //                 class="rounded-2xl overflow-hidden border-2 border-gray-700 bg-gray-900 p-0 flex flex-col items-center hover:scale-105 hover:border-gray-600 hover:bg-gray-800 transform transition-transform duration-200">
-    //                 '.$imgFileOrther.'
-    //                 <h2 class="text-[#27f2f2] drop-shadow-[0_0_5px_#27f2f282] font-semibold mt-4 mb-4">' . htmlspecialchars($productOrther['name']) . ' - '.htmlspecialchars($productOrther['post']).' '.htmlspecialchars($productOrther['category']).'</h2>
-    //             </a>';
-    //     }
-    //     echo '</div>';
-    // }        
     ?>
 
 </div>
